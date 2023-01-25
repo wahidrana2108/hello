@@ -1,37 +1,21 @@
-<?php 
-include("db.php");
+<?php
+    include ("db.php");
 ?>
 
-<form method="post">
-    <input type="text" name="id" placeholder="id">
-    <input type="text" name="title" placeholder="title">
-    <br>
-    <input name="submit" type="submit" value="inset">
+<form action="#" method="post">
+    <input type="email" name="user" placeholder="Enter username" required><br><br>
+    <input type="text" name="pass" placeholder="Enter Password" required><br><br>
+    <input type="submit" value="Insert" name="login">
 </form>
 
+
 <?php
-    if(isset($_POST['submit'])){
+if(isset($_POST['login'])){
+    $user = $_POST['user'];
+    $pass = $_POST['pass'];
 
-        $id = $_POST['id'];
-        $title = $_POST['title'];
-
-        
-        echo "$id";
-        echo " $title";
-        
-        $update = "update category set cat_title = '$title' where cat_id = '$id'";
-        $run = mysqli_query($con,$update);
-
-        if ($run) {
-            echo"<script>alert('updated successfully');</script>";
-        }
-
-
-
-       
-    }
-
-
-
-    
+    echo "$user $pass";
+}
 ?>
+
+
